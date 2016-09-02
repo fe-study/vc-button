@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+<title>demo - vc-button</title>
+<style>
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        background: rgba(119, 129, 149, 0.8);
+    }
+    .container {
+        width: 550px;
+        padding: 20px;
+    }
+    .container label {
+        font-weight: normal;
+    }
+    .btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+    <h1 align="center">@Vue Component - vc-button</h1>
+    <div class="text-center">原生按钮组件的封装, 并提供loading状态、Bootstrap icons的组合使用</div>
+    <a style="display: block" class="text-center" href="https://github.com/iwaimai-bi-fe/vc-button">view on Github</a>
+    <hr>
+
+    <div id="app" class="container">
+
+        <button class="btn btn-success btn-sm" @click="toggleIcon">toggle icon</button>
+        <button class="btn btn-success btn-sm" @click="toggleIconShape">toggle icon shape</button>
+        <br>
+
+        <vc-button
+            :type="type"
+            :loading="loading"
+            :loading-text="loadingText"
+            :size="size"
+            :disabled="disabled"
+            :icon="icon"
+            :shape="shape"
+            :style='{ "border-radius": "0px" }'
+            @click="handleClick('btn1', '@click', 'is slot, costom style')"
+        >
+            slot & costom style
+        </vc-button>
+
+        <vc-button
+            :label="label"
+            :type="type"
+            :loading="loading"
+            :loading-text="loadingText"
+            :size="size"
+            :disabled="disabled"
+            :icon="icon"
+            :shape="shape"
+            @click="handleClick('btn2', '@click', this)"
+        >
+        </vc-button>
+
+        <div class="form-group">
+            <label>配置组件的label属性</label>
+            <input type="text" class="form-control" placeholder="label" v-model="label" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的loadingText属性</label>
+            <input type="text" class="form-control" placeholder="loadingText" v-model="loadingText" />
+        </div>
+
+        <div class="form-group">
+            <label>配置组件的iconStr属性(合法的Bootstrap icon,仅需写名称,无需glyphicon等字样)</label>
+            <input type="text" class="form-control" placeholder="iconStr" v-model="iconStr" />
+        </div>
+        <button class="btn btn-info btn-sm" @click="setIcon">click to set Icon</button>
+
+        <div class="form-group">
+            <div>disabled - (默认: false)</div>
+            <label><input type="radio" :value="bools.true" name="disabled" v-model="disabled">是</label>
+            <label><input type="radio" :value="bools.false" name="disabled" v-model="disabled">否</label>
+        </div>
+
+        <div class="form-group">
+            <div>loading - (默认: false)</div>
+            <label><input type="radio" :value="bools.true" name="loading" v-model="loading">是</label>
+            <label><input type="radio" :value="bools.false" name="loading" v-model="loading">否</label>
+        </div>
+
+        <div class="form-group">
+            <div>配置组件的size</div>
+            <label><input type="radio" value="large" name="size" v-model="size">large</label>
+            <label><input type="radio" value="small" name="size" v-model="size">small</label>
+            <label><input type="radio" value="mini" name="size" v-model="size">mini</label>
+            <label><input type="radio" value="middle" name="size" v-model="size">middle(default)</label>
+        </div>
+
+        <div class="form-group">
+            <div>配置组件的shape</div>
+            <label><input type="radio" value="circle" name="shape" v-model="shape">circle</label>
+            <label><input type="radio" value="" name="shape" v-model="shape">无圆形外边框</label>
+        </div>
+
+        <div class="form-group">
+            <div>配置组件的type</div>
+            <label><input type="radio" value="default" name="type" v-model="type">default</label>
+            <label><input type="radio" value="warning" name="type" v-model="type">warning</label>
+            <label><input type="radio" value="danger" name="type" v-model="type">danger</label>
+            <label><input type="radio" value="success" name="type" v-model="type">success</label>
+            <label><input type="radio" value="info" name="type" v-model="type">info</label>
+            <label><input type="radio" value="primary" name="type" v-model="type">primary</label>
+        </div>
+
+    </div>
+    <script src='../dist/example.js'></script>
+</body>
+</html>
