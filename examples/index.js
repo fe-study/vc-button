@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import vcButton from '../dist/build.js'
+import vcButton from '../src'
 
 new Vue({
 	el: '#app',

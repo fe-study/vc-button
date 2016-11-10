@@ -89,12 +89,12 @@ if (false) {
 var hotAPI = require("vue-hot-reload-api")
 hotAPI.install(require("vue"))
 if (!hotAPI.compatible) return
-var id = "-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue"
+var id = "-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue"
 hotAPI.createRecord(id, module.exports)
-module.hot.accept(["-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue","-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Button.vue"], function () {
-var newOptions = require("-!babel!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue")
+module.hot.accept(["-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue","-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Button.vue"], function () {
+var newOptions = require("-!babel!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=script&index=0!./Button.vue")
 if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-var newTemplate = require("-!vue-html-loader!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Button.vue")
+var newTemplate = require("-!vue-html-loader!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=template&index=0!./Button.vue")
 hotAPI.update(id, newOptions, newTemplate)
 })
 })()
@@ -368,8 +368,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-0b7f628d&file=Button.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Button.vue", function() {
-			var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-0b7f628d&file=Button.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Button.vue");
+		module.hot.accept("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-34f91e20&file=Button.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Button.vue", function() {
+			var newContent = require("!!./../../node_modules/.0.21.0@css-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-34f91e20&file=Button.vue!./../../node_modules/.2.2.3@less-loader/index.js!./../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Button.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -452,7 +452,7 @@ module.exports = function() {
 /* 6 */
 /***/ function(module, exports) {
 
-module.exports = "<button\n        :class=\"[ 'vc-button-component btn', `btn-${this.type}`, `btn-${this.btnSize}`, {} ]\"\n        :type=\"htmlType\"\n        :disabled=\"disabled\"\n        :style=\"style\"\n    >\n        <span v-show=\"loading\">{{ loadingText }}<span class=\"dotting\"></span><slot name=\"loading\"></slot></span>\n        <span v-show=\"!loading && icon\" :class=\"[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${shape}` ]\"></span>\n        <span v-if=\"!loading\"><slot>{{ label }}</slot></span>\n    </button>";
+module.exports = "<button\n        :class=\"[ 'vc-button-component btn', `btn-${this.type}`, `btn-${this.btnSize}`, {} ]\"\n        :type=\"htmlType\"\n        :disabled=\"disabled\"\n        :style=\"style\"\n    >\n        <span v-show=\"loading\">{{ loadingText }}<span class=\"dotting\"></span><slot name=\"loading\"></slot></span>\n        <span v-show=\"!loading && icon\" :class=\"[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${this.shape}` ]\"></span>\n        <span v-if=\"!loading\"><slot>{{ label }}</slot></span>\n    </button>";
 
 /***/ },
 /* 7 */
@@ -472,7 +472,7 @@ Object.defineProperty(exports, "__esModule", {
 //         :style="style"
 //     >
 //         <span v-show="loading">{{ loadingText }}<span class="dotting"></span><slot name="loading"></slot></span>
-//         <span v-show="!loading && icon" :class="[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${shape}` ]"></span>
+//         <span v-show="!loading && icon" :class="[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${this.shape}` ]"></span>
 //         <span v-if="!loading"><slot>{{ label }}</slot></span>
 //     </button>
 // </template>
@@ -506,6 +506,7 @@ Object.defineProperty(exports, "__esModule", {
 
 // <script>
 exports.default = {
+    name: 'vc-button',
     props: {
         label: String,
         style: Object,

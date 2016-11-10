@@ -1,3 +1,5 @@
-import vcButton from './components/Button'
+import vcButton from './Button'
 
-module.exports = vcButton
+export default vcButton
+export { vcButton }
+

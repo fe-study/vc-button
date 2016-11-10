@@ -6,7 +6,7 @@
         :style="style"
     >
         <span v-show="loading">{{ loadingText }}<span class="dotting"></span><slot name="loading"></slot></span>
-        <span v-show="!loading && icon" :class="[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${shape}` ]"></span>
+        <span v-show="!loading && icon" :class="[ 'glyphicon', `glyphicon-${this.icon}`, `glyphicon-${this.icon}-${this.shape}` ]"></span>
         <span v-if="!loading"><slot>{{ label }}</slot></span>
     </button>
 </template>
@@ -40,6 +40,7 @@
 
 <script>
 export default {
+    name: 'vc-button',
     props: {
         label: String,
         style: Object,

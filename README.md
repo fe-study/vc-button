@@ -14,7 +14,7 @@
 `npm install vc-button --save`
 
 if you are using single file `*.vue` in project, please import the component by:  
-`import vc-button from 'vc-button/src/components/Button.vue'`
+`import vcButton from 'vc-button/src/Button.vue'`
 
 ## Demo
 
